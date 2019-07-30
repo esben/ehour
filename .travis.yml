@@ -16,3 +16,14 @@ install: pip install -U tox-travis
 
 # Command to run tests, e.g. python setup.py test
 script: tox
+
+deploy:
+  provider: pypi
+  user: geanix
+  password:
+    secure: SPlZYoPkjBD+g3gv17gwEoTWDlvNsDWOtsTa61NmquFSxgHjfWOdo+GRqlUq6Q9RhnTQHC7PGhmGLxYhPqxQcLhrb/82qYiIyN4O8TbnVKEePN4UOviYv50ZT0y8dkGbjC8yqFOYP608A2RE5GoFvgfvwbNhU0cT2ZqFKIj44DiARBfM3XSVPB/vrV32si2/mwFBlrLi24KXveCAg6IipItEdUKkjT8dV+rMuoqGh5lLtVnRUT2snZh/vrDrH3bIXW9kuzdSsfpCQBfZMMtb42PhxwxXZerIIPPQccAsv+dN/4pkG425Plpf8vmLtFHKbnURbvnTtQ0fMARRp4VmX8b8xc+5mUxNLC/7YvPpvg835A+kdj026Tqk2U6ETmgYBOsoDF+KWLWB85Euq4lTFcfL4g+KKVJRXowZnV3xZwbrDVQwdGeevXF3oI55Yh52SWeAOZQsyWxZO9lCXOSMLnQwamX02mW4xfBUpzCO6vmTIhszPJLNkXu9cvuTe9EfVXnZaVSRuGZS8B+gH3okPh7GW6lq+91EaUliwCNV3Zrv0t8PtGVk1pWn4CrWYm26WfC4GI6KD8s5kDr3t46I1/xDWp/f/XPK17wgMPU/oveji/7xhQqSZkGLFtNtL3PZ3tBtmRczYZUL9QgRu3MEfTYdAMmY6vCoTkungdx1nmM=
+  distributions: "sdist"
+  on:
+    repo: geanix/ehour
+    tags: true
+    condition: TOXENV=py36
